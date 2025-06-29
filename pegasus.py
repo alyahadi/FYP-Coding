@@ -2,16 +2,18 @@ from transformers import PegasusTokenizer, PegasusForConditionalGeneration
 import os
 import re
 
+# pip install sentencepiece
+
 # Initialize Pegasus model and tokenizer
-model_name = "google/pegasus-large"  # You can choose a different Pegasus model
+model_name = "google/pegasus-large"  
 tokenizer = PegasusTokenizer.from_pretrained(model_name)
 model = PegasusForConditionalGeneration.from_pretrained(model_name)
 
 def pegasus_summarize_with_keywords(
     text, topic, keywords,
     max_length=250, min_length=50,
-    num_beams=6, length_penalty=2.0,
-    num_sentences=5              # <-- new parameter
+    num_beams=5, length_penalty=2.0,
+    num_sentences=5              
 ):
     """Summarizes text, emphasizing given keywords, then truncates to N sentences."""
     keyword_str  = ", ".join(keywords)

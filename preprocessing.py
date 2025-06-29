@@ -7,9 +7,14 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.corpus import stopwords
 import spacy
 
+# pip install nltk
+# pip install spacy
+# python -m spacy download en_core_web_sm
+
+
 # Download required NLTK resources (first-time only)
-# nltk.download('punkt')
-# nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('stopwords')
 
 nlp = spacy.load("en_core_web_sm")
 
@@ -87,7 +92,7 @@ for file_path in text_files:
 
         # Custom topic extraction on original sentences
         custom_topics = {
-            "Lineage Overview": ["called", "name", "lineage", "tribe", "family", "cousin", "uncle", "sister", "mother", "father", "born", "Banu"],
+            "Lineage Overview": ["called", "name", "lineage", "tribe", "family", "cousin", "uncle", "sister", "mother", "father", "born", "Banu", "brother"],
             "Conversion and Early Islam": ["conversion", "embrace", "accept"],
             "Persecution": ["persecution", "torture", "beat"],
             "Hijra": ["migration", "Ansar", "Muhajireen", "Medina", "hijrah", "Abyssinia"],

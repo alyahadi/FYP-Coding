@@ -4,6 +4,9 @@ from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 
+# pip install sumy
+
+
 # Function to apply LexRank summarization to a block of text.
 def lexrank_summarize(text, sentence_count=5):
     parser = PlaintextParser.from_string(text, Tokenizer("english"))

@@ -10,8 +10,8 @@ model = BartForConditionalGeneration.from_pretrained(model_name)
 def bart_summarize_with_keywords(
     text, topic, keywords,
     max_length=250, min_length=50,
-    num_beams=4, length_penalty=2.0,
-    num_sentences=5         # <--- new parameter
+    num_beams=5, length_penalty=2.0,
+    num_sentences=5         
 ):
     """Summarizes text, emphasizing keywords, then truncates to N sentences."""
     keyword_str  = ", ".join(keywords)
